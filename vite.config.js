@@ -10,6 +10,11 @@ export default defineConfig({
     ],
     build: {
         manifest: true,
-        outDir: 'public/build', // Asegura que los archivos se generen en public/build
+        outDir: 'public/build', // Evita que Vite cree `.vite/`
+        rollupOptions: {
+            input: {
+                app: 'resources/js/app.js',
+            },
+        },
     }
 });
