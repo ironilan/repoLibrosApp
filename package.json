@@ -4,7 +4,7 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "postinstall": "ln -sfn ./public/build/.vite/manifest.json ./public/build/manifest.json"
+        "postinstall": "ln -s $(pwd)/public/build/.vite/manifest.json $(pwd)/public/build/manifest.json"
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.2",
