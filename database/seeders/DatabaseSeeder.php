@@ -17,14 +17,14 @@ class DatabaseSeeder extends Seeder
     {
 
 
-        // User::factory()->create([
-        //     'name' => 'Alexis',
-        //     'celular' => '972843376',
-        //     'tipo_doc' => 'dni',
-        //     'num_doc' => '46894256',
-        //     'password' => Hash::make('123456789'),
-        //     'email' => 'alexis@gmail.com',
-        // ]);
+        User::factory()->create([
+            'name' => 'Alexis',
+            'celular' => '972843376',
+            'tipo_doc' => 'dni',
+            'num_doc' => '46894256',
+            'password' => Hash::make('123456789'),
+            'email' => 'alexis@gmail.com',
+        ]);
 
         // User::factory(10)->create();
 
