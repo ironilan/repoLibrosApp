@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'build_path' => public_path('build'),
+    'build_path' => public_path('build/.vite'),
 ];
