@@ -26,14 +26,17 @@ class DatabaseSeeder extends Seeder
             'email' => 'alexis@gmail.com',
         ]);
 
-        // User::factory(10)->create();
 
-        // $this->call(BookSeeder::class);
-        // $this->call(PackSeeder::class);
-        // $this->call(TipoSeeder::class);
-        // $this->call(FolderSeeder::class);
-        // $this->call(BookVersionSeeder::class);
-        //$this->call(RolesypermisosSeeder::class);
+        $this->call(RolesypermisosSeeder::class);
+
+        User::factory(1)->create();
+
+        $this->call(BookSeeder::class);
+        $this->call(PackSeeder::class);
+        $this->call(TipoSeeder::class);
+        $this->call(FolderSeeder::class);
+        $this->call(BookVersionSeeder::class);
+        //
 
 
 
