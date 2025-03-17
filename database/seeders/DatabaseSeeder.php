@@ -17,28 +17,27 @@ class DatabaseSeeder extends Seeder
     {
 
 
-        User::factory()->create([
+        // Crear un usuario específico con ID controlado
+        $user = User::factory()->create([
             'name' => 'Alexis',
             'celular' => '972843376',
             'tipo_doc' => 'dni',
-            'num_doc' => '46894256',
+            'num_doc' => 46894256,
             'password' => Hash::make('123456789'),
             'email' => 'alexis@gmail.com',
         ]);
 
+        // Crear más usuarios si es necesario
+        User::factory(5)->create(); // Ajusta la cantidad según sea necesario
 
-        $this->call(RolesypermisosSeeder::class);
-
-        User::factory(1)->create();
-
-        $this->call(BookSeeder::class);
-        $this->call(PackSeeder::class);
-        $this->call(TipoSeeder::class);
-        $this->call(FolderSeeder::class);
-        $this->call(BookVersionSeeder::class);
-        //
-
-
-
+        // Ejecutar otros seeders después de asegurarnos de que hay usuarios
+        $this->call([
+            RolesypermisosSeeder::class,
+            BookSeeder::class, // Ahora los libros tendrán usuarios válidos
+            PackSeeder::class,
+            TipoSeeder::class,
+            FolderSeeder::class,
+            BookVersionSeeder::class,
+        ]);
     }
 }
