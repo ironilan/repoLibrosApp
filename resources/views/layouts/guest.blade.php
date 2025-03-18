@@ -1,3 +1,6 @@
+@php
+    $config = App\Models\Config::first();
+@endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -7,23 +10,22 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
+        <!-- Favicon dinámico -->
+        <link rel="icon" type="image/png" href="{{ asset('storage/' . $config->favicon) }}">
+
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-
     </head>
-    @php
-        $config = App\Models\Config::get()->first();
-    @endphp
+
     <body class="font-sans text-gray-900 antialiased">
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
             <div>
                 <a href="/">
-                   <img src="/storage/{{$config->logo_horizontal}}" alt="logo" style="width: 16rem">
+                   <img src="{{ asset('storage/' . $config->logo_horizontal) }}" alt="logo" style="width: 16rem">
                 </a>
             </div>
 
