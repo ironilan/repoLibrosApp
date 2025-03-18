@@ -3,6 +3,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\ConfiguracionController;
 use App\Http\Controllers\FolderController;
 use App\Http\Controllers\PackController;
 use App\Http\Controllers\profesor\BookController as ProfesorBookController;
@@ -123,6 +124,13 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
     Route::prefix('libros')->controller(BookController::class)->middleware('can:view-books')->group(function () {
         Route::get('/profesores', 'viewLibrosProfesor');
         Route::get('/profesores/list', 'profesores');
+    });
+
+
+    Route::prefix('configuracion')->controller(ConfiguracionController::class)->middleware('can:view-users')->group(function () {
+        Route::get('/', 'index');
+        Route::get('/get/{id}', 'show');
+        Route::post('/update/{id}', 'update');
     });
 
 

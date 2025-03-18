@@ -1,11 +1,15 @@
+@php
+    $config = App\Models\Config::get()->first();
+@endphp
+
 <aside
     class="group relative w-16 hover:w-64 transition-all duration-300 bg-gray-900 text-white flex flex-col p-4 shadow-lg">
     <!-- Contenedor del logo con fondo blanco y borde redondeado -->
     <div class="flex items-center justify-center py-4  rounded-xl p-2">
-        <img src="{{ Storage::url('images/logo.png') }}"
+        <img src="/storage/{{$config->logo}}"
             class="w-10 h-10 transition-opacity duration-300 group-hover:opacity-0 absolute rounded-[20px] bg-white"
             alt="Logo">
-        <img src="{{ Storage::url('images/logotipo.png') }}"
+        <img src="/storage/{{$config->logo_horizontal}}"
             class="w-40 h-20 opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-[20px] bg-white"
             alt="Logotipo">
     </div>

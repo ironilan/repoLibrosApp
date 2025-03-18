@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\BookVersion;
+use App\Models\Config;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -25,6 +26,14 @@ class DatabaseSeeder extends Seeder
             'num_doc' => 46894256,
             'password' => Hash::make('123456789'),
             'email' => 'alexis@gmail.com',
+        ]);
+
+        Config::create([
+            'logo' => 'logo.png',
+            'logo_horizontal' => 'logo.png',
+            'favicon' => 'logo.png',
+            'titulo' => 'Libros App',
+            'estado' => 1
         ]);
 
         // Crear más usuarios si es necesario

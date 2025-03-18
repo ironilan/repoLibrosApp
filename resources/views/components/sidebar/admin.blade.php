@@ -49,13 +49,13 @@
             <a href="/dashboard/carpetas/libros" class="block p-1">- Recursos</a>
         </div>
     </div>
-    <div>
+    {{-- <div>
         <a href="/dashboard/reportes"
             class="flex items-center space-x-4 p-2 rounded-lg hover:bg-gray-700">
             <i class="fas fa-file"></i>
             <span class="hidden group-hover:block">Reportes</span>
         </a>
-    </div>
+    </div> --}}
     <div>
         <a href="/dashboard/configuracion"
             class="flex items-center space-x-4 p-2 rounded-lg hover:bg-gray-700">
